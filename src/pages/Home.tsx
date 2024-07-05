@@ -17,7 +17,7 @@ const Home: React.FC = () => {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-90">
-          <div className="absolute top-10 left-10 z-10 max-w-lg sm:max-w-md md:max-w-lg lg:max-w-xl">
+          <div className="m-8 z-10 max-w-lg sm:max-w-md md:max-w-lg lg:max-w-xl">
             <h1 className="text-3xl md:text-5xl font-bold mb-4">PS Movies</h1>
             <p className="text-xl md:text-2xl mb-2">
               Find all type of movies, shows etc.
