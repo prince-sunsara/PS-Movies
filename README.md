@@ -11,5 +11,7 @@ Everything that is used in this project:
 - React Icons
 - axios
 - Tailblocks
+- Chat GPT
+- BlackBox AI
 
 #### Click here for [Live Demo](https://psmovies.netlify.app/)
