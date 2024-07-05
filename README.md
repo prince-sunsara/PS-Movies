@@ -11,3 +11,5 @@ Everything that is used in this project:
 - React Icons
 - axios
 - Tailblocks
+
+#### Click here for [Live Demo](https://psmovies.netlify.app/)
