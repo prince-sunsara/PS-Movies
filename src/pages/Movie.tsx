@@ -7,10 +7,11 @@ import { MovieCurousle } from "../components";
 const Movie = () => {
   const { id } = useParams<string>();
 
-  const { movie, fetchMovieById, loading, movies } = useMovies();
+  const { movie, fetchMovieById, loading, movies, error, fetchMovies } =
+    useMovies();
 
   useEffect(() => {
-    fetchMovieById(id);
+    fetchMovieById(id!);
   }, [id]);
 
   if (loading) {
@@ -108,7 +109,7 @@ const Movie = () => {
               </div>
               <div
                 className="leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: movie?.summary }}
+                dangerouslySetInnerHTML={{ __html: movie?.summary! }}
               />
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                 <div className="flex">
@@ -125,7 +126,7 @@ const Movie = () => {
                   {movie?.premiered} to {movie?.ended ? movie.ended : "Ended"}
                 </span>
                 <Link
-                  to={movie?.url}
+                  to={movie?.url!}
                   target="_blank"
                   className="flex ml-auto text-white rounded-full bg-indigo-500 border-0 p-3 focus:outline-none hover:bg-indigo-600"
                 >
@@ -149,8 +150,22 @@ const Movie = () => {
         </div>
       </section>
 
-      <MovieCurousle movies={movies.slice(0, 15)} />
-      <MovieCurousle movies={movies.slice(15, 30)} />
+      <MovieCurousle
+        movie={movie}
+        movies={movies.slice(0, 15)}
+        loading={loading}
+        error={error}
+        fetchMovies={fetchMovies}
+        fetchMovieById={fetchMovieById}
+      />
+      <MovieCurousle
+        movie={movie}
+        movies={movies.slice(15, 30)}
+        loading={loading}
+        error={error}
+        fetchMovies={fetchMovies}
+        fetchMovieById={fetchMovieById}
+      />
     </>
   );
 };

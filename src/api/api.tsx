@@ -45,7 +45,7 @@ export const MovieProvider: React.FC<{ children: ReactNode }> = ({
 
   // method: GET
   // fetch single movie'
-  const fetchMovieById = async (id: number) => {
+  const fetchMovieById = async (id: string) => {
     try {
       setLoading(true);
       const response = await axios.get(`https://api.tvmaze.com/shows/${id}`);

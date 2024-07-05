@@ -5,7 +5,8 @@ import { MovieCurousle } from "../components";
 import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
-  const { movies } = useMovies();
+  const { movies, loading, error, fetchMovies, movie, fetchMovieById } =
+    useMovies();
 
   return (
     <div className="relative h-screen bg-black text-white">
@@ -46,7 +47,14 @@ const Home: React.FC = () => {
           </div>
         </div>
         <div className="absolute bottom-0 w-full p-4 bg-opacity-80">
-          <MovieCurousle movies={movies} />
+          <MovieCurousle
+            movie={movie}
+            movies={movies}
+            loading={loading}
+            error={error}
+            fetchMovies={fetchMovies}
+            fetchMovieById={fetchMovieById}
+          />
         </div>
       </div>
     </div>
