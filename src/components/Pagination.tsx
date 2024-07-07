@@ -27,10 +27,16 @@ const PaginationCard = ({
 
   const handleNext = () => {
     handlePagination(currentPage + 1);
+    if (currentPage === 12) {
+      handlePagination(1);
+    }
   };
 
   const handlePrevious = () => {
     handlePagination(currentPage - 1);
+    if (currentPage === 1) {
+      handlePagination(12);
+    }
   };
 
   return (
