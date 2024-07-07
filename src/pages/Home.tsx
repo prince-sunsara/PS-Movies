@@ -28,14 +28,17 @@ const Home: React.FC = () => {
             </div>
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 mb-4">
               <Link
-                to="/gallery"
+                to="/gallary"
                 className="flex items-center justify-center bg-green-600 px-4 py-2 rounded hover:bg-green-700 transition duration-300 w-full sm:w-auto"
               >
                 <FaPlay className="mr-2" /> Gallery
               </Link>
-              <button className="flex items-center justify-center bg-green-600 px-4 py-2 rounded hover:bg-green-700 transition duration-300 w-full sm:w-auto">
+              <Link
+                to="/contact"
+                className="flex items-center justify-center bg-green-600 px-4 py-2 rounded hover:bg-green-700 transition duration-300 w-full sm:w-auto"
+              >
                 <FaPlus className="mr-2" /> Contact Us
-              </button>
+              </Link>
             </div>
             <p className="text-sm md:text-base max-w-md">
               Sed ut perspiciatis unde omnis iste natus accusantium doloremque
