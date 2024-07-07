@@ -23,5 +23,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/components/ui", "@/lib"]
+  "include": [
+    "src",
+    "src/components/ui",
+    "@/lib",
+    "src/components/ui/button.tsx"
+  ]
 }

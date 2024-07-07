@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
 import { useMovies } from "../api/api";
+import { Pagination } from "../components";
+import { useState } from "react";
 
 const Gallary = () => {
   const { movies, loading } = useMovies();
+  const [page, setPage] = useState(1);
+  const [posts, setPosts] = useState(20);
+  const indexOfLastPost = page * posts;
+  const indexOfFirstPost = indexOfLastPost - posts;
+
+  const handlePagination = (pageNumber: number) => {
+    setPage(pageNumber);
+  };
+  // console.log(page);
 
   if (loading) {
     return (
@@ -18,7 +29,7 @@ const Gallary = () => {
         <div className="container px-4 py-12 mx-auto">
           <div className="flex flex-wrap -m-4">
             {movies &&
-              movies.map((movie) => (
+              movies.slice(indexOfFirstPost, indexOfLastPost).map((movie) => (
                 <Link
                   to={`/gallary/${movie.id}`}
                   className="lg:w-1/5 md:w-1/3 p-4 w-full hover:shadow-gray-200 hover:shadow-sm hover:scale-105"
@@ -44,6 +55,14 @@ const Gallary = () => {
           </div>
         </div>
       </section>
+
+      {/* pagination  */}
+      <Pagination
+        posts={posts}
+        length={movies.length}
+        handlePagination={handlePagination}
+        currentPage={page}
+      />
     </>
   );
 };

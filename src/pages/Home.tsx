@@ -41,11 +41,14 @@ const Home: React.FC = () => {
               </Link>
             </div>
             <p className="text-sm md:text-base max-w-md">
-              Sed ut perspiciatis unde omnis iste natus accusantium doloremque
-              laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-              veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut fugit.
+              Welcome to PS Movies, your ultimate destination for discovering,
+              exploring, and watching a wide array of films. Find detailed
+              information, trailers, and reviews for your favorite movies.
+              Whether you're looking for the latest blockbusters or classic
+              films, PS Movies provides a seamless and enjoyable viewing
+              experience. Join us and explore the world of cinema from the
+              comfort of your home. Enjoy personalized recommendations and stay
+              updated with the latest releases.
             </p>
           </div>
         </div>
