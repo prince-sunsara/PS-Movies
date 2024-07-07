@@ -3,6 +3,8 @@ import {
   PaginationContent,
   PaginationItem,
   PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
 } from "./ui/pagination";
 
 type PaginationPropsType = {
@@ -22,9 +24,27 @@ const PaginationCard = ({
   for (let i = 1; i <= Math.ceil(length / posts); i++) {
     paginationNumber.push(i);
   }
+
+  const handleNext = () => {
+    handlePagination(currentPage + 1);
+  };
+
+  const handlePrevious = () => {
+    handlePagination(currentPage - 1);
+  };
+
   return (
     <Pagination className="container mb-4">
       <PaginationContent className="flex flex-wrap">
+        {/* previous button  */}
+        <PaginationItem>
+          <PaginationPrevious
+            className="cursor-pointer"
+            onClick={handlePrevious}
+          />
+        </PaginationItem>
+
+        {/* pagination buttons */}
         {paginationNumber.map((page) => (
           <PaginationItem
             key={page}
@@ -36,6 +56,11 @@ const PaginationCard = ({
             <PaginationLink>{page}</PaginationLink>
           </PaginationItem>
         ))}
+
+        {/* next button  */}
+        <PaginationItem>
+          <PaginationNext className="cursor-pointer" onClick={handleNext} />
+        </PaginationItem>
       </PaginationContent>
     </Pagination>
   );
