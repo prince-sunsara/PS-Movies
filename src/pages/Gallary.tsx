@@ -6,7 +6,7 @@ import { useState } from "react";
 const Gallary = () => {
   const { movies, loading } = useMovies();
   const [page, setPage] = useState(1);
-  const [posts, setPosts] = useState(20);
+  const posts = 20;
   const indexOfLastPost = page * posts;
   const indexOfFirstPost = indexOfLastPost - posts;
 
